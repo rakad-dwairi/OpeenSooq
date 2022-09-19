@@ -83,16 +83,9 @@ class AuthController extends BaseController
 
 		$model = new LoginForm();
         if ($model->load(Yii::$app->request->post() , '') && $model->login()) {
-            // if($model->login()){
-            // die('asd');
 			$user = Yii::$app->user->identity;
-
 			$token = $this->generateJwt($user);
-			// print_r($token); die('asdasdasdasd');
-
 			$this->generateRefreshToken($user);
-			// \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-
 			return $this->asJson([
 				'user' => $user,
 				'token' => (string) $token,
@@ -112,14 +105,9 @@ class AuthController extends BaseController
 				'model' => $model
 			]);
         }
-		
-		// print_r($model); die;
-
-		
-
 		return $this->asJson([
 			'status' => false,
-			'errors' => $model->errors
+			'error' => $model->errors
 		]);
 
         

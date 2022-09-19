@@ -31,7 +31,6 @@ class BaseController extends Controller
 				'login',
                 'create',
 				'refresh-token',
-                // 'get-city-weather',
 			],
 		];
 
