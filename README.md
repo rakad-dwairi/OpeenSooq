@@ -4,7 +4,7 @@
 
 # php init
 
-# php yii migrate => to migate the tables to your database 
+# php yii migrate => to migate the tables into your database 
 
 # run    CREATE TABLE `user_refresh_tokens` (
             `user_refresh_tokenID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
